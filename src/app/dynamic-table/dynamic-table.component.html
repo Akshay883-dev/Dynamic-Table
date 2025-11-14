@@ -1,0 +1,25 @@
+<div class="row">
+    <h2 class="text-center m-2 p-2 text-primary "> Dynamic Number Table</h2>
+</div>
+<div class="container rounded border border p-2 m-2">
+    <table class="table table-bordered table-striped table-active">
+        <thead>
+            <div class="timer" *ngIf="timerStarted">Timer: {{ timer.toFixed(1) }}s</div>
+            <tr>
+                <th class="text-center" *ngFor="let heading of headings">{{heading}}</th>
+            </tr>
+            <tr>
+                <th><input [(ngModel)]="input0" type="number" (ngModelChange)="add(0, $event)" /></th>
+                <th><input [(ngModel)]="input1" type="number" (ngModelChange)="add(1, $event)" /></th>
+                <th><input [(ngModel)]="input2" type="number" (ngModelChange)="add(2, $event)" /></th>
+                <th><input [(ngModel)]="input3" type="number" (ngModelChange)="add(3, $event)" /></th>
+                <th><input [(ngModel)]="input4" type="number" (ngModelChange)="add(4, $event)" /></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of data">
+                <td *ngFor="let col of row.cols">{{ col }}</td>
+            </tr>
+        </tbody>
+
+    </table>
