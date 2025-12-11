@@ -1,0 +1,158 @@
+/* PAGE LAYOUT */
+.page-wrapper {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 18px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 10px 5px;
+}
+
+.header-row h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #3a6db5;
+}
+
+/* TABLE BLOCK */
+.table-container {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  border: 1px solid #eaeaea;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* CUSTOM TABLE */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th {
+  text-align: center;
+  background: #f3f5f8;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.custom-table td {
+  text-align: center;
+  border: 1px solid #dcdcdc;
+  padding: 12px;
+  background: #ffffff;
+  font-size: 16px;
+}
+
+.custom-table input {
+  width: 95%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+.custom-table input:focus {
+  border-color: #3a6db5;
+  box-shadow: 0 0 4px #3a6db5;
+}
+
+/* ===== SPEED CONTROL SECTION ===== */
+
+.speed-wrapper {
+  text-align: center;
+  user-select: none;
+}
+
+.speed-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #666;
+}
+
+/* KNOB CONTAINER */
+.knob-container {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin: auto;
+  cursor: grab;
+  filter: drop-shadow(0 0 6px var(--speedColor));
+}
+
+.knob-container:active {
+  cursor: grabbing;
+}
+
+/* KNOB STYLING */
+.knob {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fafafa, #d0d0d0);
+
+  box-shadow:
+    inset 4px 4px 10px rgba(0, 0, 0, 0.25),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.5);
+
+  transform: rotate(var(--angle));
+  transition: transform 0.1s linear;
+  position: relative;
+}
+
+.indicator {
+  width: 6px;
+  height: 35px;
+  background: var(--speedColor);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* TICKS */
+.ticks {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.ticks span {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: #999;
+  left: 50%;
+  top: 0;
+  transform-origin: center 60px;
+}
+
+/* SPEED VALUE TEXT */
+.speed-value {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--speedColor);
+}
